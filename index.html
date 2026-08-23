@@ -385,12 +385,29 @@
   }
   .frame:hover { border-color: var(--line); }
   .frame p {
+    position: relative;
+    z-index: 2;
     font-family: var(--font-mono);
     font-size: 0.72rem;
     letter-spacing: 0.03em;
     color: var(--paper-faint);
   }
-  .frame-mark { position: absolute; width: 16px; height: 16px; border: var(--brass) solid; opacity: 0.55; }
+  .frame.has-photo img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .frame.has-photo::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 55%, rgba(10,14,23,0.88) 100%);
+    z-index: 1;
+  }
+  .frame.has-photo p { color: var(--paper); }
+  .frame-mark { position: absolute; z-index: 2; width: 16px; height: 16px; border: var(--brass) solid; opacity: 0.55; }
   .frame-mark.tl { top: 10px; left: 10px; border-width: 1.5px 0 0 1.5px; }
   .frame-mark.tr { top: 10px; right: 10px; border-width: 1.5px 1.5px 0 0; }
   .frame-mark.bl { bottom: 10px; left: 10px; border-width: 0 0 1.5px 1.5px; }
@@ -580,8 +597,8 @@
     <h2>Portfolio</h2>
     <p class="section-lead">The jet-photography gallery opens after the first bookings at EGBJ. The frames below are reserved.</p>
     <div class="portfolio-grid">
-      <div class="frame"><span class="frame-mark tl"></span><span class="frame-mark tr"></span><span class="frame-mark bl"></span><span class="frame-mark br"></span><p>Reserved — EGBJ ramp</p></div>
-      <div class="frame"><span class="frame-mark tl"></span><span class="frame-mark tr"></span><span class="frame-mark bl"></span><span class="frame-mark br"></span><p>Reserved — Arrival light</p></div>
+      <div class="frame has-photo"><img src="images/mustang-front-bright.jpg" alt="Ford Mustang GT, front-on, daylight" loading="lazy"><span class="frame-mark tl"></span><span class="frame-mark tr"></span><span class="frame-mark bl"></span><span class="frame-mark br"></span><p>Ford Mustang GT — front</p></div>
+      <div class="frame has-photo"><img src="images/mustang-front-detail.jpg" alt="Ford Mustang GT, front detail" loading="lazy"><span class="frame-mark tl"></span><span class="frame-mark tr"></span><span class="frame-mark bl"></span><span class="frame-mark br"></span><p>Ford Mustang GT — detail</p></div>
       <div class="frame"><span class="frame-mark tl"></span><span class="frame-mark tr"></span><span class="frame-mark bl"></span><span class="frame-mark br"></span><p>Reserved — Static detail</p></div>
       <div class="frame"><span class="frame-mark tl"></span><span class="frame-mark tr"></span><span class="frame-mark bl"></span><span class="frame-mark br"></span><p>Reserved — Cheltenham week</p></div>
       <div class="frame"><span class="frame-mark tl"></span><span class="frame-mark tr"></span><span class="frame-mark bl"></span><span class="frame-mark br"></span><p>Reserved — Departure roll</p></div>
