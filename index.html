@@ -312,6 +312,30 @@
     color: var(--paper-faint);
   }
 
+  /* Gallery — pure image grid, no chrome */
+  .gallery-grid {
+    margin-top: var(--space-4);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3px;
+  }
+  @media (min-width: 700px) {
+    .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  .gallery-grid a {
+    display: block;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background: var(--surface);
+  }
+  .gallery-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+  .gallery-grid a:hover img { transform: scale(1.04); }
+
   /* Testimonials */
   .testimonial-text {
     margin-top: var(--space-4);
@@ -373,7 +397,8 @@
     <nav class="nav-links" id="navLinks">
       <a href="#services">Services</a>
       <a href="#process">Process</a>
-      <a href="#portfolio">Portfolio</a>
+      <a href="#cars-aircraft">Cars &amp; Aircraft</a>
+      <a href="#small-businesses">Small Businesses</a>
       <a href="#testimonials">Testimonials</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -393,7 +418,7 @@
     <p class="hero-sub">Cotswold Jet Photography documents private and business aircraft on the ramp at Gloucestershire Airport and Cotswold Airport — clean digital galleries, delivered within days, priced for owners, operators, and crew who want more than a phone snapshot.</p>
     <div class="hero-ctas">
       <a class="btn btn-primary" href="#services">View services</a>
-      <a class="btn btn-text" href="#portfolio">See the portfolio</a>
+      <a class="btn btn-text" href="#cars-aircraft">See the portfolio</a>
     </div>
   </div>
 </section>
@@ -462,18 +487,27 @@
   </div>
 </section>
 
-<section class="section" id="portfolio">
+<section class="section" id="cars-aircraft">
   <div class="wrap">
     <p class="eyebrow">Gallery</p>
-    <h2>Portfolio</h2>
-    <p class="section-lead">The jet-photography gallery opens after the first bookings at EGBJ. The frames below are reserved.</p>
-    <div class="portfolio-grid">
-      <figure class="frame"><div class="frame-photo"><img src="images/mustang-front-bright.jpg" alt="Ford Mustang GT, front-on, daylight" loading="lazy"></div><figcaption>Ford Mustang GT — front</figcaption></figure>
-      <figure class="frame"><div class="frame-photo"><img src="images/mustang-front-detail.jpg" alt="Ford Mustang GT, front detail" loading="lazy"></div><figcaption>Ford Mustang GT — detail</figcaption></figure>
-      <figure class="frame"><div class="frame-photo"></div><figcaption>Reserved — Static detail</figcaption></figure>
-      <figure class="frame"><div class="frame-photo"></div><figcaption>Reserved — Cheltenham week</figcaption></figure>
-      <figure class="frame"><div class="frame-photo"></div><figcaption>Reserved — Departure roll</figcaption></figure>
-      <figure class="frame"><div class="frame-photo"></div><figcaption>Reserved — Cotswold Airport</figcaption></figure>
+    <h2>Cars &amp; Aircraft</h2>
+    <p class="section-lead">Private aircraft on the ramp at EGBJ and Cotswold Airport, alongside automotive work closer to home.</p>
+    <div class="gallery-grid">
+      <a href="images/mustang-front-bright.jpg" target="_blank" rel="noopener"><img src="images/mustang-front-bright.jpg" alt="Ford Mustang GT, front-on, daylight" loading="lazy"></a>
+      <a href="images/mustang-front-detail.jpg" target="_blank" rel="noopener"><img src="images/mustang-front-detail.jpg" alt="Ford Mustang GT, front detail" loading="lazy"></a>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="small-businesses">
+  <div class="wrap">
+    <p class="eyebrow">Gallery</p>
+    <h2>Small Businesses</h2>
+    <p class="section-lead">Product photography for local brands — lit and composed the same way we shoot aircraft on the ramp.</p>
+    <div class="gallery-grid">
+      <a href="images/cider-brick-ledge.jpg" target="_blank" rel="noopener"><img src="images/cider-brick-ledge.jpg" alt="Strongbow cider can, backlit on a brick ledge" loading="lazy"></a>
+      <a href="images/cider-in-hand.jpg" target="_blank" rel="noopener"><img src="images/cider-in-hand.jpg" alt="Strongbow cider can held in hand in a backyard" loading="lazy"></a>
+      <a href="images/cider-two-cans.jpg" target="_blank" rel="noopener"><img src="images/cider-two-cans.jpg" alt="Two Strongbow cider cans in garden mulch" loading="lazy"></a>
     </div>
   </div>
 </section>
