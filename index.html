@@ -601,7 +601,11 @@
     <p class="eyebrow">Request a Quote</p>
     <h2>Book now</h2>
     <p class="section-lead">Tell us a bit about your business or vehicle and we'll come back with a quote.</p>
-    <form class="quote-form" id="quoteForm">
+    <form class="quote-form" id="quoteForm" name="quote" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="quote">
+      <div class="field-full" style="display:none">
+        <label>Don't fill this out if you're human: <input name="bot-field"></label>
+      </div>
       <div>
         <label for="qBusiness">Business / owner name</label>
         <input type="text" id="qBusiness" name="qBusiness" required>
@@ -629,6 +633,7 @@
       <div class="field-full">
         <button type="submit">Request a quote</button>
       </div>
+      <p class="field-full" id="quoteStatus" role="status" style="font-weight:700; display:none;"></p>
     </form>
   </div>
 </section>
@@ -669,28 +674,29 @@
   });
 
   var quoteForm = document.getElementById('quoteForm');
+  var quoteStatus = document.getElementById('quoteStatus');
   if (quoteForm) {
     quoteForm.addEventListener('submit', function (e) {
       e.preventDefault();
-      var business = document.getElementById('qBusiness').value;
-      var type = document.getElementById('qType').value;
-      var location = document.getElementById('qLocation').value;
-      var length = document.getElementById('qLength').value;
-      var details = document.getElementById('qDetails').value;
 
-      var subject = 'Quote request — ' + business;
-      var body =
-        'Business / owner name: ' + business + '\n' +
-        'What they sell / offer: ' + type + '\n' +
-        'Location: ' + location + '\n' +
-        'Shoot length: ' + length + '\n' +
-        'Additional details: ' + (details || '—');
+      var formData = new FormData(quoteForm);
+      var encoded = new URLSearchParams(formData).toString();
 
-      var mailto = 'mailto:leonmansion796@gmail.com'
-        + '?subject=' + encodeURIComponent(subject)
-        + '&body=' + encodeURIComponent(body);
+      quoteStatus.style.display = 'block';
+      quoteStatus.textContent = 'Sending…';
 
-      window.location.href = mailto;
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: encoded
+      })
+        .then(function () {
+          quoteForm.reset();
+          quoteStatus.textContent = "Thanks — your request has been sent. We'll be in touch shortly.";
+        })
+        .catch(function () {
+          quoteStatus.textContent = "Something went wrong sending that. Please email leonmansion796@gmail.com directly.";
+        });
     });
   }
 </script>
