@@ -3,19 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cotswold Jet Photography</title>
-<meta name="description" content="Private and business aircraft photography at Gloucestershire Airport (EGBJ) and Cotswold Airport (EGBP). Packages from £100/shoot.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230A0E17'/%3E%3Cline x1='14' y1='32' x2='50' y2='32' stroke='%23C6A25D' stroke-width='3'/%3E%3C/svg%3E">
+<title>Cotswold Photography</title>
+<meta name="description" content="Affordable photography in the Cotswolds — vehicles, aircraft, cars, cafes, and barber shops. Packages from £100/shoot.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23FFFFFF'/%3E%3Cline x1='14' y1='32' x2='50' y2='32' stroke='%23111111' stroke-width='4'/%3E%3C/svg%3E">
 <style>
   :root {
-    --ink: #0A0E17;
-    --surface: #12161F;
-    --line: rgba(245,245,243,0.14);
-    --paper: #F5F5F3;
-    --paper-dim: #A6AEAC;
-    --paper-faint: #78807E;
-    --brass: #C6A25D;
-    --brass-bright: #E7CC8E;
+    --ink: #FFFFFF;
+    --surface: #F4F4F2;
+    --line: rgba(17,17,17,0.12);
+    --paper: #111111;
+    --paper-dim: #3A3A3A;
+    --paper-faint: #63635F;
+    --brass: #8A6A2F;
+    --brass-bright: #6B5122;
 
     --font: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
@@ -37,12 +37,13 @@
     font-family: var(--font);
     font-size: 1.0625rem;
     line-height: 1.6;
+    font-weight: 500;
     -webkit-font-smoothing: antialiased;
   }
 
   h1, h2, h3 {
     font-family: var(--font);
-    font-weight: 700;
+    font-weight: 800;
     color: var(--paper);
     text-wrap: balance;
     margin: 0;
@@ -56,8 +57,11 @@
 
   a:focus-visible,
   button:focus-visible,
-  label:focus-visible {
-    outline: 2px solid var(--brass-bright);
+  label:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible {
+    outline: 2px solid var(--brass);
     outline-offset: 3px;
   }
 
@@ -71,7 +75,7 @@
     font-size: 0.72rem;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    font-weight: 500;
+    font-weight: 700;
     color: var(--brass);
     margin-bottom: var(--space-2);
   }
@@ -80,14 +84,14 @@
     max-width: 46ch;
     color: var(--paper-dim);
     font-size: 1.05rem;
-    font-weight: 300;
+    font-weight: 500;
     margin-top: var(--space-2);
   }
 
   .section { padding-block: var(--space-6); }
   .section-alt { background: var(--surface); }
 
-  h2 { font-size: clamp(1.9rem, 3.6vw, 2.5rem); font-weight: 700; }
+  h2 { font-size: clamp(1.9rem, 3.6vw, 2.5rem); font-weight: 800; }
 
   /* Buttons */
   .btn {
@@ -95,22 +99,24 @@
     align-items: center;
     gap: 0.5rem;
     font-family: var(--font);
-    font-weight: 500;
+    font-weight: 700;
     font-size: 0.95rem;
     white-space: nowrap;
+    border-radius: 2px;
   }
   .btn-primary {
     background: var(--paper);
     color: var(--ink);
     padding: 0.85rem 1.75rem;
+    border: 1px solid var(--paper);
   }
-  .btn-primary:hover { background: var(--brass); }
+  .btn-primary:hover { background: var(--brass); border-color: var(--brass); color: var(--ink); }
   .btn-text {
     color: var(--paper);
-    border-bottom: 1px solid var(--line);
+    border-bottom: 2px solid var(--paper);
     padding-bottom: 0.2rem;
   }
-  .btn-text:hover { color: var(--brass-bright); border-color: var(--brass); }
+  .btn-text:hover { color: var(--brass); border-color: var(--brass); }
 
   /* Header / nav */
   header.site-header {
@@ -128,7 +134,7 @@
     position: relative;
   }
   .brand {
-    font-weight: 700;
+    font-weight: 800;
     font-size: 0.92rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -143,6 +149,7 @@
   }
   .nav-links a {
     font-size: 0.92rem;
+    font-weight: 700;
     color: var(--paper-dim);
   }
   .nav-links a:hover { color: var(--paper); }
@@ -157,7 +164,7 @@
     justify-content: space-between;
     cursor: pointer;
   }
-  .nav-toggle span { display: block; height: 1px; background: var(--paper); }
+  .nav-toggle span { display: block; height: 2px; background: var(--paper); }
 
   @media (max-width: 899px) {
     .nav-links {
@@ -177,7 +184,7 @@
       padding: 1rem clamp(1.25rem, 4.5vw, 3rem);
       border-top: 1px solid var(--line);
     }
-    .nav-toggle-input:checked ~ .nav-links { max-height: 22rem; }
+    .nav-toggle-input:checked ~ .nav-links { max-height: 26rem; }
     .nav-cta.desktop-only { display: none; }
     .nav-toggle { display: flex; }
   }
@@ -191,18 +198,18 @@
     padding-bottom: clamp(4.5rem, 11vw, 8rem);
     border-bottom: 1px solid var(--line);
   }
-  .hero-inner { max-width: 40rem; }
+  .hero-inner { max-width: 42rem; }
   .hero h1 {
     font-size: clamp(2.5rem, 5.6vw, 4rem);
     line-height: 1.1;
     margin-bottom: var(--space-3);
   }
-  .hero h1 .light { font-weight: 300; color: var(--brass); }
+  .hero h1 .light { font-weight: 800; color: var(--brass); }
   .hero-sub {
     color: var(--paper-dim);
-    font-weight: 300;
+    font-weight: 500;
     font-size: 1.1rem;
-    max-width: 40ch;
+    max-width: 42ch;
     margin-bottom: var(--space-4);
   }
   .hero-ctas { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3); }
@@ -217,12 +224,13 @@
     align-items: baseline;
     justify-content: space-between;
   }
-  .credibility p { max-width: 52ch; color: var(--paper-dim); font-weight: 300; font-size: 1rem; }
-  .credibility strong { color: var(--paper); font-weight: 700; }
+  .credibility p { max-width: 52ch; color: var(--paper-dim); font-weight: 500; font-size: 1rem; }
+  .credibility strong { color: var(--paper); font-weight: 800; }
   .credibility-meta {
     display: flex;
     gap: var(--space-2);
     font-size: 0.82rem;
+    font-weight: 700;
     letter-spacing: 0.02em;
     color: var(--brass);
     white-space: nowrap;
@@ -241,34 +249,35 @@
   }
   .service-col {
     padding-top: var(--space-2);
-    border-top: 1px solid var(--line);
+    border-top: 2px solid var(--paper);
   }
   .service-tag {
     font-size: 0.72rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
+    font-weight: 700;
     color: var(--brass);
     margin-bottom: 0.6rem;
   }
   .service-price {
     font-size: 0.95rem;
-    font-weight: 500;
+    font-weight: 700;
     color: var(--paper);
     margin-bottom: 0.75rem;
   }
-  .service-col h3 { font-size: 1.4rem; font-weight: 700; margin-bottom: 0.6rem; }
-  .service-desc { color: var(--paper-dim); font-weight: 300; font-size: 0.98rem; }
+  .service-col h3 { font-size: 1.4rem; font-weight: 800; margin-bottom: 0.6rem; }
+  .service-desc { color: var(--paper-dim); font-weight: 500; font-size: 0.98rem; }
   .service-list { margin-top: var(--space-2); display: flex; flex-direction: column; gap: 0.5rem; }
-  .service-list li { font-size: 0.92rem; color: var(--paper-dim); font-weight: 300; }
+  .service-list li { font-size: 0.92rem; color: var(--paper-dim); font-weight: 500; }
   .addons {
     margin-top: var(--space-4);
     font-size: 0.92rem;
-    font-weight: 300;
+    font-weight: 500;
     color: var(--paper-faint);
     border-top: 1px solid var(--line);
     padding-top: var(--space-3);
   }
-  .addons span { color: var(--brass); font-weight: 500; font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; margin-right: 0.6rem; }
+  .addons span { color: var(--brass); font-weight: 700; font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; margin-right: 0.6rem; }
 
   /* Process */
   .process-list {
@@ -284,33 +293,12 @@
   .process-list .step {
     display: block;
     font-size: 0.82rem;
+    font-weight: 700;
     color: var(--brass);
     margin-bottom: 0.5rem;
   }
-  .process-list h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.4rem; }
-  .process-list p { color: var(--paper-dim); font-weight: 300; font-size: 0.96rem; }
-
-  /* Portfolio */
-  .portfolio-grid {
-    margin-top: var(--space-4);
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-3);
-  }
-  @media (min-width: 700px) {
-    .portfolio-grid { grid-template-columns: repeat(3, 1fr); }
-  }
-  .frame-photo {
-    aspect-ratio: 4 / 5;
-    background: var(--surface);
-  }
-  .frame-photo img { width: 100%; height: 100%; object-fit: cover; }
-  .frame figcaption {
-    padding-top: 0.65rem;
-    font-size: 0.82rem;
-    font-weight: 300;
-    color: var(--paper-faint);
-  }
+  .process-list h3 { font-size: 1.1rem; font-weight: 800; margin-bottom: 0.4rem; }
+  .process-list p { color: var(--paper-dim); font-weight: 500; font-size: 0.96rem; }
 
   /* Gallery — pure image grid, no chrome */
   .gallery-grid {
@@ -336,17 +324,88 @@
   }
   .gallery-grid a:hover img { transform: scale(1.04); }
 
+  /* Book now banner (inside gallery sections) */
+  .book-banner {
+    margin-top: var(--space-4);
+    background: var(--paper);
+    color: var(--ink);
+    padding: var(--space-3) var(--space-4);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-2);
+  }
+  .book-banner p {
+    font-size: 1.15rem;
+    font-weight: 800;
+  }
+  .book-banner .btn-primary {
+    background: var(--ink);
+    color: var(--paper);
+    border-color: var(--ink);
+  }
+  .book-banner .btn-primary:hover { background: var(--brass); border-color: var(--brass); color: var(--ink); }
+
   /* Testimonials */
   .testimonial-text {
     margin-top: var(--space-4);
     max-width: 44rem;
     font-size: 1.35rem;
-    font-weight: 300;
+    font-weight: 500;
     line-height: 1.5;
     color: var(--paper-dim);
     border-top: 1px solid var(--line);
     padding-top: var(--space-4);
   }
+
+  /* Quote form */
+  .quote-form {
+    margin-top: var(--space-4);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+    max-width: 40rem;
+  }
+  @media (min-width: 700px) {
+    .quote-form { grid-template-columns: 1fr 1fr; }
+  }
+  .quote-form .field-full { grid-column: 1 / -1; }
+  .quote-form label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--paper);
+    margin-bottom: 0.5rem;
+  }
+  .quote-form input,
+  .quote-form select,
+  .quote-form textarea {
+    width: 100%;
+    font-family: var(--font);
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--paper);
+    background: var(--ink);
+    border: 2px solid var(--paper);
+    border-radius: 2px;
+    padding: 0.75rem 0.9rem;
+  }
+  .quote-form textarea { resize: vertical; min-height: 6rem; }
+  .quote-form button {
+    justify-self: start;
+    cursor: pointer;
+    border: 2px solid var(--paper);
+    background: var(--paper);
+    color: var(--ink);
+    padding: 0.85rem 1.75rem;
+    font-family: var(--font);
+    font-weight: 700;
+    font-size: 0.95rem;
+  }
+  .quote-form button:hover { background: var(--brass); border-color: var(--brass); }
 
   /* Contact */
   .contact-inner {
@@ -366,11 +425,11 @@
     padding-block: 0.75rem;
     border-top: 1px solid var(--line);
     font-size: 0.95rem;
-    font-weight: 300;
+    font-weight: 500;
   }
   .coverage-row:first-of-type { border-top: none; padding-top: 0; }
-  .coverage-row .code { color: var(--brass); font-weight: 500; }
-  .coverage-note { margin-top: var(--space-2); color: var(--paper-faint); font-weight: 300; font-size: 0.85rem; }
+  .coverage-row .code { color: var(--brass); font-weight: 700; }
+  .coverage-note { margin-top: var(--space-2); color: var(--paper-faint); font-weight: 500; font-size: 0.85rem; }
 
   /* Footer */
   footer {
@@ -385,14 +444,14 @@
     align-items: center;
   }
   .footer-inner .brand { font-size: 0.78rem; }
-  .footer-meta { color: var(--paper-faint); font-weight: 300; font-size: 0.85rem; }
+  .footer-meta { color: var(--paper-faint); font-weight: 500; font-size: 0.85rem; }
 </style>
 </head>
 <body>
 
 <header class="site-header">
   <div class="wrap nav-inner">
-    <a class="brand" href="#top">COTSWOLD <span>JET</span> PHOTOGRAPHY</a>
+    <a class="brand" href="#top">COTSWOLD <span>PHOTOGRAPHY</span></a>
     <input type="checkbox" id="navToggle" class="nav-toggle-input">
     <nav class="nav-links" id="navLinks">
       <a href="#services">Services</a>
@@ -413,9 +472,9 @@
 
 <section class="hero" id="top">
   <div class="wrap hero-inner">
-    <p class="eyebrow">Private Aviation Photography · EGBJ &amp; The Cotswolds</p>
-    <h1>Every aircraft has one best angle.<br><span class="light">We wait for it.</span></h1>
-    <p class="hero-sub">Cotswold Jet Photography documents private and business aircraft on the ramp at Gloucestershire Airport and Cotswold Airport — clean digital galleries, delivered within days, priced for owners, operators, and crew who want more than a phone snapshot.</p>
+    <p class="eyebrow">Vehicles · Cafes · Barber Shops · The Cotswolds</p>
+    <h1>Affordable photography<br><span class="light">in the Cotswolds.</span></h1>
+    <p class="hero-sub">Cotswold Photography covers everything from aircraft and cars to cafes and barber shops — clean digital galleries, delivered within days, priced for owners and operators who want more than a phone snapshot.</p>
     <div class="hero-ctas">
       <a class="btn btn-primary" href="#services">View services</a>
       <a class="btn btn-text" href="#cars-aircraft">See the portfolio</a>
@@ -425,9 +484,9 @@
 
 <section class="credibility">
   <div class="wrap credibility-inner">
-    <p><strong>Shot by Leon Mansion</strong> — a Cotswolds-based aviation photographer and PPL student who spent years on the fence line at EGBJ before turning the lens toward the ramp itself.</p>
+    <p><strong>Shot by Leon Mansion</strong> — a Cotswolds-based photographer whose work spans vehicles — aircraft and cars — through to cafes and barber shops, built on years behind the lens and a social following of 100k+.</p>
     <div class="credibility-meta">
-      <span>Based in the Cotswolds</span><span class="dot">·</span><span>EGBJ &amp; EGBP</span><span class="dot">·</span><span>PPL in training</span>
+      <span>Based in the Cotswolds</span><span class="dot">·</span><span>Vehicles &amp; Small Businesses</span><span class="dot">·</span><span>PPL in training</span>
     </div>
   </div>
 </section>
@@ -436,12 +495,12 @@
   <div class="wrap">
     <p class="eyebrow">Pricing</p>
     <h2>Services</h2>
-    <p class="section-lead">Straightforward packages, built around how ramp time actually works.</p>
+    <p class="section-lead">Straightforward packages, whether it's a car, an aircraft, or your shopfront.</p>
     <div class="service-grid">
       <div class="service-col">
         <p class="service-price">From £100</p>
-        <h3>Ramp Pass</h3>
-        <p class="service-desc">A single aircraft, one focused session — arrival, static, and departure coverage with a same-week digital gallery.</p>
+        <h3>Single Session</h3>
+        <p class="service-desc">One focused session — a car, an aircraft, or a small business — with a same-week digital gallery.</p>
         <ul class="service-list">
           <li>30–45 minutes on-site</li>
           <li>15+ edited images</li>
@@ -451,18 +510,18 @@
       <div class="service-col">
         <p class="service-tag">Most booked</p>
         <p class="service-price">From £250</p>
-        <h3>Event Coverage</h3>
-        <p class="service-desc">Extended coverage across a high-traffic day — Cheltenham Festival week and similar — when the ramp fills with visiting aircraft.</p>
+        <h3>Half/Full-Day Coverage</h3>
+        <p class="service-desc">Extended coverage across a half or full day — ideal for a cafe, barber shop, or a busy day on the ramp.</p>
         <ul class="service-list">
-          <li>Half-day coverage</li>
-          <li>Multi-aircraft gallery</li>
+          <li>Half-day or full-day coverage</li>
+          <li>Multi-subject gallery</li>
           <li>Priority 48-hour delivery</li>
         </ul>
       </div>
       <div class="service-col">
         <p class="service-price">Price on application</p>
-        <h3>Bespoke &amp; Charter</h3>
-        <p class="service-desc">Tailored shoots for operators and owners — branded galleries, video walk-arounds, and print-ready files for marketing or handover.</p>
+        <h3>Bespoke &amp; Ongoing</h3>
+        <p class="service-desc">Tailored shoots for operators, owners, and small businesses — branded galleries, video walk-arounds, and print-ready files for marketing.</p>
         <ul class="service-list">
           <li>Custom scope &amp; scheduling</li>
           <li>Video walk-around add-on</li>
@@ -470,7 +529,7 @@
         </ul>
       </div>
     </div>
-    <p class="addons"><span>Add-ons</span>Rush 48-hour delivery · Framed prints · Video walk-around · Extra aircraft on the same visit</p>
+    <p class="addons"><span>Add-ons</span>Rush 48-hour delivery · Framed prints · Video walk-around · Extra subjects on the same visit</p>
   </div>
 </section>
 
@@ -479,9 +538,9 @@
     <p class="eyebrow">Process</p>
     <h2>How a shoot works</h2>
     <ol class="process-list">
-      <li><span class="step">01</span><h3>Enquire</h3><p>Tell us the aircraft, date, and airport — EGBJ or Cotswold Airport.</p></li>
-      <li><span class="step">02</span><h3>We schedule around the ramp</h3><p>Shoot times are set around arrival and departure slots, and the light — not the clock.</p></li>
-      <li><span class="step">03</span><h3>Shoot day</h3><p>On-site with two cameras — long glass for air-to-ground work, close range for static detail.</p></li>
+      <li><span class="step">01</span><h3>Enquire</h3><p>Tell us what you'd like shot, the date, and the location — anywhere across the Cotswolds.</p></li>
+      <li><span class="step">02</span><h3>We schedule around you</h3><p>Shoot times are set around your opening hours or ramp slots, and the light — not the clock.</p></li>
+      <li><span class="step">03</span><h3>Shoot day</h3><p>On-site with two cameras — long glass for distance work, close range for detail shots.</p></li>
       <li><span class="step">04</span><h3>Gallery delivered</h3><p>An edited digital gallery lands within days, licensed for your own use.</p></li>
     </ol>
   </div>
@@ -491,7 +550,7 @@
   <div class="wrap">
     <p class="eyebrow">Gallery</p>
     <h2>Cars &amp; Aircraft</h2>
-    <p class="section-lead">Private aircraft on the ramp at EGBJ and Cotswold Airport, alongside automotive work closer to home.</p>
+    <p class="section-lead">Vehicles across the Cotswolds — private aircraft on the ramp alongside automotive work closer to home.</p>
     <div class="gallery-grid">
       <a href="images/mustang-front-bright.jpg" target="_blank" rel="noopener"><img src="images/mustang-front-bright.jpg" alt="Ford Mustang GT, front-on, daylight" loading="lazy"></a>
       <a href="images/mustang-front-detail.jpg" target="_blank" rel="noopener"><img src="images/mustang-front-detail.jpg" alt="Ford Mustang GT, front detail" loading="lazy"></a>
@@ -502,6 +561,10 @@
       <a href="images/car-mustang-rear-street.jpg" target="_blank" rel="noopener"><img src="images/car-mustang-rear-street.jpg" alt="Ford Mustang GT, rear three-quarter, street" loading="lazy"></a>
       <a href="images/car-mustang-front-text.jpg" target="_blank" rel="noopener"><img src="images/car-mustang-front-text.jpg" alt="Ford Mustang GT, front three-quarter" loading="lazy"></a>
     </div>
+    <div class="book-banner">
+      <p>Own a car or aircraft worth shooting?</p>
+      <a class="btn btn-primary" href="#quote">Book now</a>
+    </div>
   </div>
 </section>
 
@@ -509,20 +572,64 @@
   <div class="wrap">
     <p class="eyebrow">Gallery</p>
     <h2>Small Businesses</h2>
-    <p class="section-lead">Product photography for local brands — lit and composed the same way we shoot aircraft on the ramp.</p>
+    <p class="section-lead">Product and lifestyle photography for local brands — cafes, barber shops, and more — lit and composed with the same care as the vehicle work.</p>
     <div class="gallery-grid">
       <a href="images/cider-brick-ledge.jpg" target="_blank" rel="noopener"><img src="images/cider-brick-ledge.jpg" alt="Strongbow cider can, backlit on a brick ledge" loading="lazy"></a>
       <a href="images/cider-in-hand.jpg" target="_blank" rel="noopener"><img src="images/cider-in-hand.jpg" alt="Strongbow cider can held in hand in a backyard" loading="lazy"></a>
       <a href="images/cider-two-cans.jpg" target="_blank" rel="noopener"><img src="images/cider-two-cans.jpg" alt="Two Strongbow cider cans in garden mulch" loading="lazy"></a>
+      <a href="images/pancakes-backlit-brick.jpg" target="_blank" rel="noopener"><img src="images/pancakes-backlit-brick.jpg" alt="Stack of pancakes, backlit on a brick ledge" loading="lazy"></a>
+      <a href="images/pancakes-topdown-magazine.jpg" target="_blank" rel="noopener"><img src="images/pancakes-topdown-magazine.jpg" alt="Stack of pancakes, top-down flat lay with magazine" loading="lazy"></a>
+      <a href="images/pancakes-flatlay-mug.jpg" target="_blank" rel="noopener"><img src="images/pancakes-flatlay-mug.jpg" alt="Pancakes with coffee mug and magazine, morning light" loading="lazy"></a>
+    </div>
+    <div class="book-banner">
+      <p>Run a cafe, barber shop, or small business?</p>
+      <a class="btn btn-primary" href="#quote">Book now</a>
     </div>
   </div>
 </section>
 
-<section class="section section-alt" id="testimonials">
+<section class="section" id="testimonials">
   <div class="wrap">
     <p class="eyebrow">Client Stories</p>
     <h2>Testimonials</h2>
-    <p class="testimonial-text">We're just getting started — client stories will appear here after our first shoots at EGBJ. Book early, and yours may be the first thing visitors read.</p>
+    <p class="testimonial-text">We're just getting started — client stories will appear here after our first shoots. Book early, and yours may be the first thing visitors read.</p>
+  </div>
+</section>
+
+<section class="section section-alt" id="quote">
+  <div class="wrap">
+    <p class="eyebrow">Request a Quote</p>
+    <h2>Book now</h2>
+    <p class="section-lead">Tell us a bit about your business or vehicle and we'll come back with a quote.</p>
+    <form class="quote-form" id="quoteForm">
+      <div>
+        <label for="qBusiness">Business / owner name</label>
+        <input type="text" id="qBusiness" name="qBusiness" required>
+      </div>
+      <div>
+        <label for="qType">What do you sell / offer?</label>
+        <input type="text" id="qType" name="qType" placeholder="e.g. coffee, haircuts, car detailing" required>
+      </div>
+      <div>
+        <label for="qLocation">Location</label>
+        <input type="text" id="qLocation" name="qLocation" placeholder="Town or postcode" required>
+      </div>
+      <div>
+        <label for="qLength">Shoot length</label>
+        <select id="qLength" name="qLength" required>
+          <option value="" disabled selected>Select an option</option>
+          <option value="Half day">Half day</option>
+          <option value="Full day">Full day</option>
+        </select>
+      </div>
+      <div class="field-full">
+        <label for="qDetails">Anything else we should know?</label>
+        <textarea id="qDetails" name="qDetails" placeholder="Dates in mind, style you're after, etc."></textarea>
+      </div>
+      <div class="field-full">
+        <button type="submit">Request a quote</button>
+      </div>
+    </form>
   </div>
 </section>
 
@@ -531,25 +638,25 @@
     <div>
       <p class="eyebrow">Enquire</p>
       <h2>Contact</h2>
-      <p class="section-lead">Based in the Cotswolds — covering EGBJ (Gloucestershire Airport) and Cotswold Airport, with travel further afield by arrangement.</p>
+      <p class="section-lead">Based in the Cotswolds — covering EGBJ (Gloucestershire Airport), Cotswold Airport, and local businesses across the region, with travel further afield by arrangement.</p>
       <div class="contact-links">
-        <a class="btn btn-primary" href="mailto:hello@cotswoldjetphotography.co.uk">hello@cotswoldjetphotography.co.uk</a>
-        <a class="btn btn-text" href="https://instagram.com/cotswoldjetphotography" target="_blank" rel="noopener">@cotswoldjetphotography</a>
+        <a class="btn btn-primary" href="mailto:leonmansion796@gmail.com">leonmansion796@gmail.com</a>
+        <a class="btn btn-text" href="tel:+447548359093">07548 359093</a>
       </div>
     </div>
     <div class="coverage">
       <p class="eyebrow">Coverage area</p>
       <div class="coverage-row"><span>Gloucestershire Airport</span><span class="code">EGBJ</span></div>
       <div class="coverage-row"><span>Cotswold Airport (Kemble)</span><span class="code">EGBP</span></div>
-      <p class="coverage-note">Other UK airfields by arrangement.</p>
+      <p class="coverage-note">Other UK airfields and local businesses by arrangement.</p>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="wrap footer-inner">
-    <a class="brand" href="#top">COTSWOLD <span>JET</span> PHOTOGRAPHY</a>
-    <p class="footer-meta">&copy; 2026 Cotswold Jet Photography. Based in the Cotswolds.</p>
+    <a class="brand" href="#top">COTSWOLD <span>PHOTOGRAPHY</span></a>
+    <p class="footer-meta">&copy; 2026 Cotswold Photography. Based in the Cotswolds.</p>
   </div>
 </footer>
 
@@ -560,6 +667,32 @@
       if (toggle) { toggle.checked = false; }
     });
   });
+
+  var quoteForm = document.getElementById('quoteForm');
+  if (quoteForm) {
+    quoteForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var business = document.getElementById('qBusiness').value;
+      var type = document.getElementById('qType').value;
+      var location = document.getElementById('qLocation').value;
+      var length = document.getElementById('qLength').value;
+      var details = document.getElementById('qDetails').value;
+
+      var subject = 'Quote request — ' + business;
+      var body =
+        'Business / owner name: ' + business + '\n' +
+        'What they sell / offer: ' + type + '\n' +
+        'Location: ' + location + '\n' +
+        'Shoot length: ' + length + '\n' +
+        'Additional details: ' + (details || '—');
+
+      var mailto = 'mailto:leonmansion796@gmail.com'
+        + '?subject=' + encodeURIComponent(subject)
+        + '&body=' + encodeURIComponent(body);
+
+      window.location.href = mailto;
+    });
+  }
 </script>
 </body>
 </html>
