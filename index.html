@@ -194,9 +194,30 @@
 
   /* Hero */
   .hero {
+    position: relative;
     padding-top: clamp(4.5rem, 11vw, 8rem);
     padding-bottom: clamp(4.5rem, 11vw, 8rem);
     border-bottom: 1px solid var(--line);
+    isolation: isolate;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url('images/pancakes-topdown-magazine.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.16;
+    z-index: -2;
+  }
+  .hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--ink);
+    opacity: 0.55;
+    z-index: -1;
   }
   .hero-inner { max-width: 42rem; }
   .hero h1 {
